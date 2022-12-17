@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+  host:
+    build: 
+      context: host
+      dockerfile: ./Dockerfile
+    ports:
+      - "3000:3000"
+    links:
+      - navbar
+  navbar:
+    build: 
+      context: navbar
+      dockerfile: ./Dockerfile
+    ports:
+      - "3001:3001"
